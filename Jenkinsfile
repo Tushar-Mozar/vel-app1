@@ -24,6 +24,11 @@ pipeline {
 							sh "chmod -R 777 /var/www/html/index.html"
 						}
 				}
+				stage ('restart-httpd') {
+						steps {
+							sh "service httpd restart"
+						}
+				}
 		
 		}
 
